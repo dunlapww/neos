@@ -38,4 +38,10 @@ class NeoapiTest < Minitest::Test
                      :is_sentry_object]
     assert_equal neoapi.asteroid_data.first.keys, asteroid_keys
   end
+
+  def test_it_can_determine_largest_asteroid
+    date = "2019-03-30"
+    neoapi = Neoapi.new(date)
+    assert_equal 537, neoapi.largest_asteroid
+  end
 end
