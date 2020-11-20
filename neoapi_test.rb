@@ -1,7 +1,7 @@
 require 'minitest/autorun'
 require 'minitest/pride'
 require 'pry'
-require_relative '../lib/neoapi'
+require_relative 'neoapi'
 
 class NeoapiTest < Minitest::Test
   def test_it_exists

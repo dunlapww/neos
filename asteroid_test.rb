@@ -1,7 +1,7 @@
 require 'minitest/autorun'
 require 'minitest/pride'
 require 'pry'
-require_relative '../lib/asteroid'
+require_relative 'asteroid'
 
 class AsteroidTest < Minitest::Test
   def test_it_exists
