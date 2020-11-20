@@ -1,3 +1,13 @@
+
+#the runner file:
+  #prints welcome to the screen
+  #gets a date from the user
+  #gets NEOs details by running the class method 'find_neos_by_date' on the NEO class
+  #stores aspects of the output in different local variables
+  #has methods to create a table of the results
+  #prints the high level summary of the query
+  #prints the table to the screen
+
 require_relative 'near_earth_objects'
 
 puts "________________________________________________________________________________________________________________________________"
