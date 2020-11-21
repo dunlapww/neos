@@ -21,8 +21,26 @@ class Table
     "+-#{column_data.map { |_,col| "-"*col[:width] }.join('-+-') }-+"
   end
 
-  def format_row_data
-    row = @row_data.keys.map { |key| @row_data[key].ljust(column_data[key][:width]) }.join(' | ')
-    puts "| #{row} |"
+
+  def create_rows
+    @row_data.map { |row_detail| display_row(row_detail) }
   end
+
+  def display_table
+    puts divider
+    puts header
+    create_rows.each {|row| print row}
+    puts divider
+  end
+  
+  private
+
+  def format_row_data(row_detail)
+    row_detail.keys.map { |key| row_detail[key].ljust(column_data[key][:width]) }.join(' | ')
+  end
+
+  def display_row(row_detail)
+    "| #{format_row_data(row_detail)} |\n"
+  end
+
 end
