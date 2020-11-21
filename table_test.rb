@@ -71,13 +71,13 @@ class TableTest < Minitest::Test
   
   def test_it_can_create_a_header
     table = Table.new(@column_labels, @asteroid_list)
-    result =  "| Name        | Diameter | Missed The Earth By: |"
+    result =  "| Name        | Diameter | Missed The Earth By: |\n"
     assert_equal result, table.header
   end
   
   def test_it_can_create_a_divider
     table = Table.new(@column_labels, @asteroid_list)
-    result = "+-------------+----------+----------------------+"
+    result = "+-------------+----------+----------------------+\n"
     assert_equal result, table.divider
   end
   
@@ -85,5 +85,11 @@ class TableTest < Minitest::Test
     table = Table.new(@column_labels, @asteroid_list)
     result = ["| (2011 GE3)  | 123 ft   | 35542652 miles       |\n", "| (2011 GK44) | 147 ft   | 10701438 miles       |\n"]
     assert_equal result, table.create_rows
+  end
+  
+  def test_it_can_display_table
+    table = Table.new(@column_labels, @asteroid_list)
+    result = "+-------------+----------+----------------------+\n| Name        | Diameter | Missed The Earth By: |\n| (2011 GE3)  | 123 ft   | 35542652 miles       |\n| (2011 GK44) | 147 ft   | 10701438 miles       |\n+-------------+----------+----------------------+\n"
+    assert_equal result, table.display_table
   end
 end
