@@ -14,11 +14,11 @@ class Table
   end
 
   def header
-    "| #{ column_data.map { |_,col| col[:label].ljust(col[:width]) }.join(' | ') } |"
+    "| #{ column_data.map { |_,col| col[:label].ljust(col[:width]) }.join(' | ') } |\n"
   end
 
   def divider
-    "+-#{column_data.map { |_,col| "-"*col[:width] }.join('-+-') }-+"
+    "+-#{column_data.map { |_,col| "-"*col[:width] }.join('-+-') }-+\n"
   end
 
 
@@ -27,10 +27,11 @@ class Table
   end
 
   def display_table
-    puts divider
-    puts header
-    create_rows.each {|row| print row}
-    puts divider
+    layout = ""
+    layout << divider
+    layout << header
+    create_rows.each {|row| layout << row}
+    layout << divider
   end
   
   private
