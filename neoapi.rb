@@ -24,10 +24,4 @@ class Neoapi
     output = JSON.parse(list_data.body, symbolize_names: true)[:near_earth_objects][:"#{@date}"]
   end
 
-  def largest_asteroid
-    asteroid_data.map do |asteroid|
-      asteroid[:estimated_diameter][:feet][:estimated_diameter_max].to_i
-    end.max { |a,b| a<=> b}
-  end
-
 end
