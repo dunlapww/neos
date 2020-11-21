@@ -79,6 +79,11 @@ class TableTest < Minitest::Test
     table = Table.new(@column_labels, @asteroid_list)
     result = "+-------------+----------+----------------------+"
     assert_equal result, table.divider
-
+  end
+  
+  def test_it_can_create_rows
+    table = Table.new(@column_labels, @asteroid_list)
+    result = ["| (2011 GE3)  | 123 ft   | 35542652 miles       |\n", "| (2011 GK44) | 147 ft   | 10701438 miles       |\n"]
+    assert_equal result, table.create_rows
   end
 end
