@@ -20,6 +20,7 @@ column_labels = { name: "Name", diameter: "Diameter", miss_distance: "Missed The
 asteroid_table = Table.new(column_labels, asteroid_list)
 
 formated_date = DateTime.parse(date).strftime("%A %b %d, %Y")
+
 puts "______________________________________________________________________________"
 puts "On #{formated_date}, there were #{total_number_of_asteroids} objects that almost collided with the earth."
 puts "The largest of these was #{largest_asteroid} ft. in diameter."
