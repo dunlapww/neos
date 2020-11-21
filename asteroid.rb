@@ -21,4 +21,16 @@ class Asteroid
     all_asteroids(asteroid_data).max_by{|asteroid| asteroid.diameter}
   end
 
+  def self.list(asteroid_data)
+    list =  []
+    all_asteroids(asteroid_data).each do |asteroid|
+      ast_hash = Hash.new
+      ast_hash[:name]=asteroid.name
+      ast_hash[:diameter]=asteroid.diameter.to_s + " ft"
+      ast_hash[:miss_distance] = asteroid.miss_distance.to_s + " miles"
+      list << ast_hash
+    end
+    list
+  end
+
 end
